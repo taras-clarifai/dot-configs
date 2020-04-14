@@ -1,4 +1,4 @@
-if [ -e ~/work/clarifai/scripts/amazon/config/ubuntu/.bashrc ];
+if [ -e $HOME/work/clarifai/scripts/amazon/config/ubuntu/.bashrc ];
 then
-  source ~/work/clarifai/scripts/amazon/config/ubuntu/.bashrc
+  source $HOME/work/clarifai/scripts/amazon/config/ubuntu/.bashrc
 fi

@@ -1,9 +1,9 @@
 alias k='kubectl'
 # API
-alias api-init='CLARIFAI_DEPLOY=local-k8s-$USER $CLARIFAI_ROOT/go/src/clarifai/scripts/k8s_run.sh'
-alias api-quick='CLARIFAI_DEPLOY=local-k8s-$USER $CLARIFAI_ROOT/go/src/clarifai/scripts/k8s_run.sh -ipnd'
-alias api-debug='CLARIFAI_DEPLOY=local-k8s-$USER;$CLARIFAI_ROOT/go/src/clarifai/scripts/k8s_run.sh -ipndb'
-alias api-debug-listen='CLARIFAI_DEPLOY=local-k8s-$USER $CLARIFAI_ROOT/go/src/clarifai/scripts/k8s_debug-api.sh -r'
+alias api-init='$CLARIFAI_ROOT/go/src/clarifai/scripts/k8s_run.sh -s'
+alias api-quick='$CLARIFAI_ROOT/go/src/clarifai/scripts/k8s_run.sh -ipnd'
+alias api-debug='$CLARIFAI_ROOT/go/src/clarifai/scripts/k8s_run.sh -ipndb'
+alias api-debug-listen='$CLARIFAI_ROOT/go/src/clarifai/scripts/k8s_debug-api.sh -r'
 alias api-check='api-host && API_CHECK_URL="http://$(api-host)/v2/healthz" && echo "Calling $API_CHECK_URL ..." && curl $API_CHECK_URL| jq .'
 alias api-forward='api-host && echo "Forwarding port 32674 to $(api-host)..." && socat TCP-LISTEN:32674,fork TCP:$(api-host)'
 api-host() {
@@ -42,5 +42,5 @@ postgres-host() {
 }
 alias postgres-forward='postgres-host && echo "Forwarding port 30000 to $(postgres-host)..." && socat TCP-LISTEN:30000,fork TCP:$(postgres-host)'
 # Test Api
-alias test-api-init='CLARIFAI_DEPLOY=test-k8s-$USER $CLARIFAI_ROOT/go/src/clarifai/scripts/k8s_test.sh'
-alias test-api-quick='CLARIFAI_DEPLOY=test-k8s-$USER $CLARIFAI_ROOT/go/src/clarifai/scripts/k8s_test.sh -pdnci'
+alias test-api-init='$CLARIFAI_ROOT/go/src/clarifai/scripts/k8s_test.sh'
+alias test-api-quick='$CLARIFAI_ROOT/go/src/clarifai/scripts/k8s_test.sh -pdnci'

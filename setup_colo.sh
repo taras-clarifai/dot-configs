@@ -1,7 +1,5 @@
 #!/bin/bash
 
-cd $HOME
-
 TS=$(date +"%Y-%m-%d-%T")
 BACKUP_DIR="${HOME}/.bashrc_backups/${TS}"
 mkdir -p "${BACKUP_DIR}"

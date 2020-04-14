@@ -1,6 +1,6 @@
 alias k='kubectl'
 # API
-alias api-init='$CLARIFAI_ROOT/go/src/clarifai/scripts/k8s_run.sh -s'
+alias api-init='$CLARIFAI_ROOT/go/src/clarifai/scripts/k8s_run.sh'
 alias api-quick='$CLARIFAI_ROOT/go/src/clarifai/scripts/k8s_run.sh -ipnd'
 alias api-debug='$CLARIFAI_ROOT/go/src/clarifai/scripts/k8s_run.sh -ipndb'
 alias api-debug-listen='$CLARIFAI_ROOT/go/src/clarifai/scripts/k8s_debug-api.sh -r'

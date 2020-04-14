@@ -1,4 +1,4 @@
-lias k='kubectl'
+alias k='kubectl'
 # API
 alias api-init='CLARIFAI_DEPLOY=local-k8s-$USER $CLARIFAI_ROOT/go/src/clarifai/scripts/k8s_run.sh'
 alias api-quick='CLARIFAI_DEPLOY=local-k8s-$USER $CLARIFAI_ROOT/go/src/clarifai/scripts/k8s_run.sh -ipnd'

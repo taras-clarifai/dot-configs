@@ -256,6 +256,8 @@ let g:go_fmt_fail_silently = 1
 let g:go_addtags_transform = "camelcase"
 let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_deadline = "5s"
+let g:go_autodetect_gopath = 1
+let g:go_bin_path = $CLARIFAI_ROOT."/go/bin"
 
 " run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()

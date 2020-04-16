@@ -16,6 +16,8 @@ set autoindent
 set smartindent
 " disable autoindenting when pasting - press F2
 set pastetoggle=<F2>
+" Maintain undo history between sessions
+set undofile
 " set option-meta key on mac
 set macmeta
 set cinoptions=g0,t0,(0,(s,j1,N0,b1
@@ -187,6 +189,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 
+Plug 'dense-analysis/ale'
 " Beauty
 Plug 'romainl/Apprentice'
 Plug 'vim-airline/vim-airline'
@@ -205,6 +208,7 @@ call plug#end()
 
 colorscheme apprentice
 let g:airline_theme='deus'
+let g:airline#extensions#ale#enabled = 1
 
 " show global menu
 set guioptions+=m
@@ -254,10 +258,19 @@ let g:go_test_timeout = '10s'
 let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 1
 let g:go_addtags_transform = "camelcase"
-let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
-let g:go_metalinter_deadline = "5s"
 let g:go_autodetect_gopath = 1
 let g:go_bin_path = $CLARIFAI_ROOT."/go/bin"
+
+" Linting
+nmap <silent> <C-e> <Plug>(ale_next_wrap)
+nmap <Leader>a :ALELint<CR>
+let g:ale_linters = {'go': ['gopls', 'gofmt', 'go build', 'golangci-lint']}
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 1
+let g:ale_set_highlights = 1
+let g:ale_set_signs = 1
+let g:ale_echo_cursor = 1
+let g:ale_sign_highlight_linenrs = 1
 
 " run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
@@ -284,3 +297,4 @@ autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
 autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+

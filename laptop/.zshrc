@@ -72,12 +72,6 @@ plugins=(git fzf brew dash docker docker-compose thefuck virtualenv virtualenvwr
 
 source $ZSH/oh-my-zsh.sh
 
-CLARIFAI_ZSH=$HOME/work/clarifai/scripts/amazon/config/macos/.zshrc
-if [ -e "$CLARIFAI_ZSH" ];
-then
-  source "$CLARIFAI_ZSH"
-fi
-
 # User configuration
 for FN in $HOME/.zshrc.d/*.sh ; do
     source "$FN"

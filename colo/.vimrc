@@ -18,8 +18,6 @@ set smartindent
 set pastetoggle=<F2>
 " Maintain undo history between sessions
 set undofile
-" set option-meta key on mac
-set macmeta
 set cinoptions=g0,t0,(0,(s,j1,N0,b1
 "map <C-K> :pyf C:\Program Files\LLVM\share\clang\lang-format.py<cr>
 "imap <C-K><c-o>:pyf C:\Program Files\LLVM\share\clang\clang-format.py<cr>

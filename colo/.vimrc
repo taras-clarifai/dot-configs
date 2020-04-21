@@ -80,6 +80,10 @@ nnoremap <S-C-Down> :m+<CR>
 " open file under cursor i another split
 map <S-C-J> :let otherfile=expand('<cfile>')<CR><C-W>w :execute('e '.otherfile)<CR><C-W>p
 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 map <M-Right> <c-w>l
 map <M-Left> <c-w>h
 map <M-Up> <c-w>k

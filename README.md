@@ -1,7 +1,5 @@
 # dot-configs
 
-# dot-configs
-
 ## Vim instructions
 
 * Install [vim-plug](https://github.com/junegunn/vim-plug)

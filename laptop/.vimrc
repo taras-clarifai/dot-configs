@@ -235,10 +235,10 @@ map <F8> :NERDTree<Space>%<CR>
 set completeopt=menuone,menu,longest
 
 if has("gui_running")
-    inoremap <C-Space> <C-n>
+    inoremap <C-Space> <C-x><C-o>
 else " no gui
   if has("unix")
-    inoremap <Nul> <C-n>
+    inoremap <Nul> <C-x><C-o>
   endif
 endif
 

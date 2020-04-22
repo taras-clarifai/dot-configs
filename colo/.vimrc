@@ -230,7 +230,14 @@ map <F8> :NERDTree<Space>%<CR>
 "" automatically open and close the popup menu / preview window
 "au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest
-inoremap <C-Space> <C-x><C-o>
+
+if has("gui_running")
+    inoremap <C-Space> <C-n>
+else " no gui
+  if has("unix")
+    inoremap <Nul> <C-n>
+  endif
+endif
 
 " C++ highlighting
 let g:cpp_member_variable_highlight = 1

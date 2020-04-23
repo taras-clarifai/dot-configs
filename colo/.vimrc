@@ -77,10 +77,11 @@ au FocusGained,BufEnter * silent! checktime
 nnoremap <S-C-Up> :m-2<CR>
 nnoremap <S-C-Down> :m+<CR>
 
-map <S-C-J> <C-W><C-J>
-map <S-C-K> <C-W><C-K>
-map <S-C-L> <C-W><C-L>
-map <S-C-H> <C-W><C-H>
+nnoremap <S-C-J> <C-W><C-J>
+nnoremap <S-C-K> <C-W><C-K>
+nnoremap <S-C-L> <C-W><C-L>
+nnoremap <S-C-H> <C-W><C-H>
+
 map <M-Right> <c-w>l
 map <M-Left> <c-w>h
 map <M-Up> <c-w>k

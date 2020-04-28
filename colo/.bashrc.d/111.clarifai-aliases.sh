@@ -44,3 +44,5 @@ alias postgres-forward='postgres-host && echo "Forwarding port 30000 to $(postgr
 # Test Api
 alias test-api-init='$CLARIFAI_ROOT/go/src/clarifai/scripts/k8s_test.sh'
 alias test-api-quick='$CLARIFAI_ROOT/go/src/clarifai/scripts/k8s_test.sh -pdnci'
+
+alias build-proto="$CLARIFAI_ROOT/proto/run_proto_build.sh"

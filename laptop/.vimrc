@@ -160,7 +160,7 @@ nmap <Leader>/ :History/<CR>
 nmap <Leader>s :exec 'Rg '.expand('<cword>')<CR>
 nmap <Leader>S :exec 'FindInFiles '.expand('<cword>')<CR>
 nmap <Leader>o :exec 'GGrep \(FIXME\)\\|\(TODO\)'<CR>
-nmap <Leader>R :%s/\<<C-r><C-w>\>/
+nmap <Leader>R :%s/\<<C-r><C-w>\>/<C-r><C-w>/
 
 " `gf` opens file under cursor in a new vertical split
 nnoremap gf :vertical wincmd f<CR>

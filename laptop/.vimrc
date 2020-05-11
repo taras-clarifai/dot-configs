@@ -162,6 +162,18 @@ nmap <Leader>S :exec 'FindInFiles '.expand('<cword>')<CR>
 nmap <Leader>o :exec 'GGrep \(FIXME\)\\|\(TODO\)'<CR>
 nmap <Leader>R :%s/\<<C-r><C-w>\>/<C-r><C-w>/
 
+" tabs business
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<cr>
+
 " `gf` opens file under cursor in a new vertical split
 nnoremap gf :vertical wincmd f<CR>
 

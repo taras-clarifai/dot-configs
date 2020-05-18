@@ -1,7 +1,7 @@
 alias vib="vim -u NONE"
 
 export EDITOR="vim -u NONE"
-export MYVIMRC='~/.vim8rc'
+export MYVIMRC='$HOME/.vim8rc'
 
 alias myvim=VIMINIT='source $MYVIMRC' vim8
 

@@ -1,3 +1,34 @@
+# see below; called by _psql_credstash_alias
+function _alias_lookup() {
+   alias_name=$1
+   alias_command=$2
+
+   # cause bash to evaluate $alias_command when creating the new alias:
+   alias ${alias_name}="$alias_command"
+   # use the alias for the first time:
+   eval $alias_name
+}
+
+function _psql_credstash_alias() {
+    alias_name=$1
+    credstash_value=$2
+    eval "alias ${alias_name}='_alias_lookup \"${alias_name}\" \"psql \\\"\$(credstash get ${credstash_value})\\\"\"'"
+    #eval "alias ${alias_name}+='_alias_lookup \"${alias_name}+\" \"pgcli \\\"\$(credstash get ${credstash_value})\\\"\"'"
+}
+
+# rw postgres
+_psql_credstash_alias "psql_dev_rw" "go/src/clarifai/api:dev:databaseURL"
+_psql_credstash_alias "psql_staging_rw" "go/src/clarifai/api:staging:databaseURL"
+_psql_credstash_alias "psql_prod_rw" "go/src/clarifai/api:prod:databaseURL"
+
+# read only postgres
+_psql_credstash_alias "psql_dev" "go/src/clarifai/api:dev:databaseURLRead"
+_psql_credstash_alias "psql_staging" "go/src/clarifai/api:staging:databaseURLRead"
+_psql_credstash_alias "psql_prod" "go/src/clarifai/api:prod:databaseURLRead"
+
+alias psql_local='psql -h 127.0.0.1 -p 5432 -U clarifai api_local'
+alias psql_test='psql -h 127.0.0.1 -p 5432 -U clarifai api_test'
+
 alias k='kubectl'
 # API
 alias api-init='$CLARIFAI_ROOT/go/src/clarifai/scripts/k8s_run.sh'
